@@ -6,4 +6,4 @@ Unless said otherwise in the corresponding folder, every challenge is published 
 
 ## Write-ups
 
-You can find write-ups on the (404 CTF discord)[https://discord.gg/j8KECppcGw]
+You can find write-ups on the [404 CTF discord](https://discord.gg/j8KECppcGw)
