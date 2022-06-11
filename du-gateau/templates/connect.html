@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+{% if user == "CeciNestPasUnUsername75264" %}
+<h2>Il semblerait que vous n'êtes pas connecté(e) 😭</h2>
+<p>Utilisez donc le formulaire ci-dessous !</p>
+<form action="/connect" method="POST">
+<label for="username">Nom d'utilisateur : </label>
+<input type="text" name="username" placeholder="Chocolatine" required>
+<label for="password">Mot de passe : </label>
+<input type="password" name="password" placeholder="chocolatine>>painauchocolat" required>
+<input type="submit" value="Manger !">
+</form>
+{% else %}
+<h2>Bienvenue, {{ user }} ! Vous pourrez bientôt commander de délicieux gâteaux avec ce compte... 🤩</h2>
+<form action="/disconnect" method="POST">
+<input type="submit" value="Se déconnecter">
+</form>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,4 @@
+import os
+
+os.system("nc -lvnp 13598 > /tmp/secret")
+

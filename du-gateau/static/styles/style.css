@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'Marius';
+    src: url('/static/fonts/Marius.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-image: url("/static/images/background.jpg");
+    margin: 0;
+    font-family: Marius, sans-serif;
+    color: #ece0d0;
+}
+
+header {
+    align-content: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 60%);
+    padding: 3em;
+}
+
+nav {
+    text-align: center;
+    background: orange;
+    width: 100%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius: 1em;
+    margin: 1em;
+}
+
+nav a {
+    padding: 1em;
+    color: #593100;
+    text-decoration: unset;
+    border-radius: 15px;
+}
+
+nav a:visited {
+    color: #593100;
+}
+
+nav a:hover {
+    color: #8a2700;
+}
+
+
+footer {
+    background: black;
+    text-align: center;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+}
+
+#content {
+    padding: 1em;
+    margin: 5em;
+    background: rgba(0, 0, 0, 80%);
+    text-align: center;
+    border-radius: 30px;
+    border: solid wheat;
+}
+
+button, input[type=submit], input[type=button] {
+    background: #FFFFFF40;
+    color: wheat;
+    border: solid wheat;
+    margin: 2em;
+    font-size: 1.5em;
+    padding: 0.5em;
+    font-family: Marius, sans-serif;
+    border-radius: 1em;
+}
+
+button:hover, input[type=submit]:hover, input[type=button]:hover {
+    cursor: pointer;
+}

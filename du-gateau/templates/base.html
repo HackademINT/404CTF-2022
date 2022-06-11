@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Qui veut du gâteau ?</title>
+    <link rel="stylesheet" href="/static/styles/style.css">
+    <meta charset="UTF-8">
+</head>
+    <body>
+        <header>
+            <h1>🎂🎂🎂 Bienvenue dans notre boutique de délicieux gâteaux !!! 🎂🎂🎂</h1>
+
+            <nav id="menu">{% block menu %}
+                <a href="/">Accueil</a>
+                <a href="/connect">Se connecter</a>
+                <a href="/admin">Espace d'administration</a>
+                <a href="/forgot_password">Mot de passe oublié</a>
+            {% endblock %}</nav>
+        </header>
+
+        <div id="content">{% block content %}
+        {% endblock %}</div>
+
+        <div id="footer">{% block footer %}
+            <footer>&copy; Hallebarbapapa 2022</footer>
+        {% endblock %}</div>
+
+    </body>
+</html>
