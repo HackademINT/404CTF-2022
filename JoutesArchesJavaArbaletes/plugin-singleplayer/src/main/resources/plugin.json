@@ -1,0 +1,5 @@
+{
+  "pluginId": "singleplayer",
+  "version": "1.2.1",
+  "mainClass": "org.hallebarde.sgplugin.SinglePlayerPlugin"
+}

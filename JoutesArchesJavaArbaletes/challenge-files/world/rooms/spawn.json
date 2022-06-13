@@ -1,0 +1,9 @@
+{
+  "name": "the dungeon hall",
+  "description": "This is the first room of the dungeon, your adventure begins here.",
+  "neighbors": [
+    "crossing"
+  ],
+  "items": [],
+  "interactions": []
+}

@@ -1,0 +1,17 @@
+{
+  "name": "the dungeon hall",
+  "description": "This is the first room of the dungeon, your adventure begins here.",
+  "neighbors": [
+    "room"
+  ],
+  "items": [
+    {
+      "type": "example_item",
+      "options": {
+        "name": "Item",
+        "description": "This is an example item."
+      }
+    }
+  ],
+  "interactions": []
+}

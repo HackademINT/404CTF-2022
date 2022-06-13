@@ -1,0 +1,5 @@
+{
+  "pluginId": "example",
+  "mainClass": "com.example.plugin.ExamplePlugin",
+  "version": "1.0.0"
+}

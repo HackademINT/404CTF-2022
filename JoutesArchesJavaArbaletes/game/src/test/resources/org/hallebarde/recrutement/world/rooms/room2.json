@@ -1,0 +1,24 @@
+{
+  "name": "Room 2",
+  "description": "Room 2 description",
+  "neighbors": [
+    "room1"
+  ],
+  "items": [],
+  "interactions": [
+    {
+      "type": "dummy",
+      "options": {
+        "name": "Test Interaction 1",
+        "description": "Test Interaction 1 description"
+      }
+    },
+    {
+      "type": "dummy",
+      "options": {
+        "name": "Test Interaction 2",
+        "description": "Test Interaction 2 description"
+      }
+    }
+  ]
+}

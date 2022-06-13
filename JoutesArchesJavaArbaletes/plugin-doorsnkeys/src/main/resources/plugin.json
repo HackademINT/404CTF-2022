@@ -1,0 +1,5 @@
+{
+  "pluginId": "doorsnkeys",
+  "mainClass": "org.hallebarde.doorsnkeys.DoorsAndKeysPlugin",
+  "version": "1.4.2"
+}

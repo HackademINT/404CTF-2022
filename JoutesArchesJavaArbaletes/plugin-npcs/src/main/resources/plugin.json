@@ -1,0 +1,5 @@
+{
+  "pluginId": "npcs",
+  "mainClass": "org.hallebarde.npcsplugin.NpcsPlugin",
+  "version": "1.0.1"
+}

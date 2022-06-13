@@ -1,0 +1,9 @@
+{
+  "name": "the training room",
+  "description": "You can train here.",
+  "neighbors": [
+    "crossing"
+  ],
+  "items": [],
+  "interactions": []
+}

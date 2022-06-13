@@ -1,0 +1,6 @@
+version = '1'
+description = 'Test plugin'
+
+dependencies {
+    implementation project(':api')
+}

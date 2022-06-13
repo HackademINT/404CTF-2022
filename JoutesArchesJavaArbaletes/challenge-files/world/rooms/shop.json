@@ -1,0 +1,17 @@
+{
+  "name": "the shop",
+  "description": "You can buy anything you want here.",
+  "neighbors": [
+    "crossing"
+  ],
+  "items": [
+    {
+      "type": "key",
+      "options": {
+        "description": "The key to the boss room",
+        "door_password": "1337"
+      }
+    }
+  ],
+  "interactions": []
+}

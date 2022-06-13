@@ -1,0 +1,34 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+group = 'com.example.exampleplugin'
+
+java.sourceCompatibility = JavaVersion.VERSION_17
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation files('libs/api-0.17.2.jar')
+    implementation files('libs/api-0.17.2-javadoc.jar')
+    implementation files('libs/api-0.17.2-sources.jar')
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task runServerWithPlugins(type: JavaExec) {
+    group = "Execution"
+    description = "Starts the server with the development plugin"
+    classpath = sourceSets.main.runtimeClasspath + project.files("gradle/game-0.31.9-all.jar")
+    main = 'org.hallebarde.recrutement.RecrutementGameLauncher'
+    workingDir = project.file('run')
+}

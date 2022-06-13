@@ -1,0 +1,24 @@
+<Configuration status="warn">
+
+    <Appenders>
+        <TerminalConsole name="stdout">
+            <PatternLayout pattern="%style{[%d{dd/MM/yyyy HH:mm:ss}]}{FG_Cyan} %style{[%logger]}{FG_Magenta} %highlight{[%t %level]} %m%n"/>
+        </TerminalConsole>
+        <TerminalConsole name="captured stdout">
+            <PatternLayout pattern="%style{[%d{dd/MM/yyyy HH:mm:ss}]}{FG_Cyan} %style{[STDOUT]}{FG_Magenta} %highlight{[%t %level]} %m%n"/>
+        </TerminalConsole>
+    </Appenders>
+
+    <Loggers>
+
+        <Root level="info">
+            <AppenderRef ref="stdout"/>
+        </Root>
+
+        <Logger name="StdoutCapture" additivity="false">
+            <AppenderRef ref="captured stdout"/>
+        </Logger>
+
+    </Loggers>
+
+</Configuration>

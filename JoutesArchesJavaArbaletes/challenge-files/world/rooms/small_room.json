@@ -1,0 +1,10 @@
+{
+  "name": "a small room",
+  "description": "A small room with nothing particularly interesting, except for a deep pit in the middle.",
+  "neighbors": [
+    "crossing",
+    "pit"
+  ],
+  "items": [],
+  "interactions": []
+}

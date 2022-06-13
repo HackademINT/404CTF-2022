@@ -1,0 +1,7 @@
+{
+  "hostname": "0.0.0.0",
+  "port": 1337,
+  "motd": "Welcome to the example server",
+  "pluginDirectory": "plugins",
+  "debug": false
+}

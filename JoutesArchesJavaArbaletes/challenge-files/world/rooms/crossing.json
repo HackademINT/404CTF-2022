@@ -1,0 +1,22 @@
+{
+  "name": "the crossing",
+  "description": "This hallway is connected to many rooms.",
+  "neighbors": [
+    "spawn",
+    "shop",
+    "small_room",
+    "training_room"
+  ],
+  "items": [],
+  "interactions": [
+    {
+      "type": "door",
+      "options": {
+        "close_description": "A closed door.",
+        "open_description": "An opened door.",
+        "password": "1337",
+        "destination": "boss_room"
+      }
+    }
+  ]
+}

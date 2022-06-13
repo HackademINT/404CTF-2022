@@ -1,0 +1,7 @@
+{
+  "hostname": "0.0.0.0",
+  "port": 1337,
+  "motd": "Bienvenue sur le jeu de recrutement de Hallebarde. Vous avez 10 minutes pour obtenir le flag, bonne chance. (Commencez par utiliser /help)",
+  "pluginDirectory": "plugins",
+  "debug": false
+}

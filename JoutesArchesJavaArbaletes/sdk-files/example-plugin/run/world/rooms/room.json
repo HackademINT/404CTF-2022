@@ -1,0 +1,17 @@
+{
+  "name": "the crossing",
+  "description": "This hallway is connected to many rooms.",
+  "neighbors": [
+    "spawn"
+  ],
+  "items": [],
+  "interactions": [
+    {
+      "type": "example_interaction",
+      "options": {
+        "name": "Interaction",
+        "description": "This is an example interaction."
+      }
+    }
+  ]
+}

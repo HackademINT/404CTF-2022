@@ -1,0 +1,10 @@
+rootProject.name = 'RecrutementGame'
+
+include "game"
+include "api"
+include 'plugin-example'
+include 'plugin-singleplayer'
+include 'plugin-doorsnkeys'
+include 'plugin-npcs'
+include 'exploit'
+

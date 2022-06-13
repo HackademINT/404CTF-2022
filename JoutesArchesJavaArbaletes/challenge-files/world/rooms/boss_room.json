@@ -1,0 +1,25 @@
+{
+  "name": "the boss room",
+  "description": "The boss is usually there, but he seems to be on holidays right now.",
+  "neighbors": [],
+  "items": [],
+  "interactions": [
+    {
+      "type": "door",
+      "options": {
+        "close_description": "A closed door.",
+        "open_description": "An opened door.",
+        "password": "1337",
+        "destination": "crossing"
+      }
+    },
+    {
+      "type": "npc",
+      "options": {
+        "name": "Flag man",
+        "description": "A strange man that seems to be carrying a flag around",
+        "ai": "flag_carrier"
+      }
+    }
+  ]
+}

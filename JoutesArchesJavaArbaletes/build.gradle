@@ -1,0 +1,152 @@
+buildscript {
+    repositories {
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
+    }
+    dependencies {
+        classpath 'gradle.plugin.de.fntsoftware.gradle:markdown-to-pdf:1.1.0'
+    }
+}
+
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('https://repo.maven.apache.org/maven2/')
+    }
+}
+
+apply plugin: 'base'
+apply plugin: 'de.fntsoftware.gradle.markdown-to-pdf'
+
+import de.fntsoftware.gradle.MarkdownToPdfTask
+
+subprojects {
+
+    apply plugin: 'java'
+
+    group = 'org.hallebarde.recrutement'
+    java.sourceCompatibility = JavaVersion.VERSION_17
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    dependencies {
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    }
+
+}
+
+task copyServerJar(type: Copy) {
+    dependsOn(':game:build')
+    from('game/build/libs/') {
+        include '*-all.jar'
+        rename '.*-all.jar', 'server.jar'
+    }
+    into 'challenge'
+}
+
+task copyPluginsJar(type: Copy) {
+    dependsOn(':plugin-singleplayer:build')
+    dependsOn(':plugin-doorsnkeys:build')
+    dependsOn(':plugin-npcs:build')
+    from('plugin-singleplayer/build/libs/') {
+        include '*.jar'
+    }
+    from('plugin-doorsnkeys/build/libs/') {
+        include '*.jar'
+    }
+    from('plugin-npcs/build/libs/') {
+        include '*.jar'
+    }
+    into 'challenge/plugins'
+}
+
+task copyServerFiles(type: Copy) {
+    from('challenge-files/') {
+        include '**'
+    }
+    into 'challenge/'
+}
+
+task copyApiJavadoc(type: Copy) {
+    dependsOn('api:javadoc')
+    from('api/build/docs') {
+        include 'javadoc/**'
+    }
+    into 'RecrutementGameSDK-0.17.2/'
+}
+
+task copySdkFiles(type: Copy) {
+    from('sdk-files') {
+        include '**'
+    }
+    into 'RecrutementGameSDK-0.17.2/'
+}
+
+task compileDocumentationReadme(type: MarkdownToPdfTask){
+    dependsOn(copySdkFiles)
+    inputFile = 'RecrutementGameSDK-0.17.2/Readme.md'
+    outputFile = 'RecrutementGameSDK-0.17.2/Readme.pdf'
+}
+
+task copyApiToSdk(type: Copy) {
+    dependsOn('api:jar')
+    dependsOn('api:javadocJar')
+    dependsOn('api:sourcesJar')
+    dependsOn(copySdkFiles)
+    from('api/build/libs') {
+        include '**'
+    }
+    into 'RecrutementGameSDK-0.17.2/example-plugin/libs'
+}
+
+task copyExamplePluginToSdk(type: Copy) {
+    from('plugin-example') {
+        include 'src/**'
+    }
+    into 'RecrutementGameSDK-0.17.2/example-plugin'
+}
+
+task copyServerJarToSdk(type: Copy) {
+    dependsOn('game:shadowJar')
+    from('game/build/libs') {
+        include '*-all.jar'
+    }
+    into 'RecrutementGameSDK-0.17.2/example-plugin/gradle'
+}
+
+task challengeDir(type: Copy) {
+    dependsOn(copyServerJar)
+    dependsOn(copyPluginsJar)
+    dependsOn(copyServerFiles)
+}
+
+
+task sdkDir(type: Copy) {
+    dependsOn(copyApiJavadoc)
+    dependsOn(copySdkFiles)
+    dependsOn(compileDocumentationReadme)
+    dependsOn(copyApiToSdk)
+    dependsOn(copyExamplePluginToSdk)
+    dependsOn(copyServerJarToSdk)
+}
+
+
+build {
+    dependsOn(challengeDir)
+    dependsOn(challengeDir)
+}
+
+clean {
+    delete "challenge/"
+    delete "RecrutementGameSDK-0.17.2"
+}

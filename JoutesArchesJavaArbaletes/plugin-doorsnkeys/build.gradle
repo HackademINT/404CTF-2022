@@ -1,0 +1,6 @@
+version = '1.4.2'
+description = 'A plugin that adds doors and keys to the world'
+
+dependencies {
+    implementation project(':api')
+}

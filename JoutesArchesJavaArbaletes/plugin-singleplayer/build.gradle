@@ -1,0 +1,6 @@
+version = '1.2.1'
+description = 'Singleplayer plugin'
+
+dependencies {
+    implementation project(':api')
+}
