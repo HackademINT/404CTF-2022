@@ -9,4 +9,8 @@ Somme de contrôle `md5` de l'image disquette : `ff6cc226ff989ec3461c5303b7aee8e
 Auteur: `Smyler#7078`
 
 ## Write-ups
+- [Par algorab sur GitHub](https://github.com/bouloukaouze/404CTF-2022-write-ups/tree/master/forensic/floppy)
 - [Par Arkanyota sur GitHub](https://github.com/ARKANYOTA/write-ups/blob/main/404CTF/Analyse_forensique/Floppy/Floppy.md)
+- [Par CyriaqueCCN sur Github](https://github.com/CyriaqueCCN/404CTF/blob/main/forensics/floppy/writeup.md)
+- [Par Melfice60 sur GitHub](https://github.com/Melfice60/404CTF---WriteUps/blob/main/Floppy)
+- [Par GerfautGE sur GitHub](https://github.com/GerfautGE/404CTF-writeups/tree/main/Analyse%20Forensique/Floppy)
